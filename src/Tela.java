@@ -5,6 +5,8 @@ public class Tela extends JFrame {
 
     public Tela(){
 
+
+
         super("Gerador Automatico de Senhas");
 
         /* 540 é um valor padrao para a largura e 570 um valor padrao para a altura
@@ -29,24 +31,53 @@ public class Tela extends JFrame {
     }
 
     private void addComponentesDeTela(){
+        setLayout(null);
 
         JLabel titulo = new JLabel("Gerenciador de senhas");
 
         titulo.setFont(new Font("Dialog",Font.BOLD,20));
 
+
+        // Centralizar o texto, preciso mudar isso no jogo da Cobrinha
+        titulo.setHorizontalAlignment(SwingConstants.CENTER);
+
          /*Seta cordenadas para o titulo, ele see mantem no centro mas com 10 de elevaçao,
         as o texto pode ocupar a tela inteira, e as letras podem ir a uma altura de 39 unidas no plano.
         */
 
+        titulo.setBounds(0,10,540,70);
 
-        titulo.setBounds(0,10,540,100);
 
-        // Centralizar o texto, preciso mudar isso no jogo da Cobrinha
 
-        titulo.setHorizontalAlignment(SwingConstants.CENTER);
-        titulo.setVerticalAlignment(SwingConstants.TOP);
+
+
 
         add(titulo);
+
+
+        JTextArea senhaInput = new JTextArea();
+
+        // evitando que a Area de texto seja editada
+        senhaInput.setEditable(false);
+        senhaInput.setFont(new Font("roboto",Font.BOLD,30));
+
+        // adicionando barra de Scrol, caso a senha fique muito grande
+
+        JScrollPane senhaImputPane = new JScrollPane(senhaInput);
+        senhaImputPane.setBounds(25,97,479,70);
+
+        //Criar bordas
+        senhaImputPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        add(senhaImputPane);
+
+        // criando a escolha do tamanho da senha
+        JLabel tamanhoDaSenha = new JLabel("Tamanho da Senha");
+        tamanhoDaSenha.setFont(new Font("Roboto",Font.BOLD,20));
+        tamanhoDaSenha.setBounds(25,215,272,39);
+        add(tamanhoDaSenha);
+
+
+        // botoes para escolher o tipo de senha
     }
 
 
