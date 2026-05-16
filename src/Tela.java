@@ -78,6 +78,27 @@ public class Tela extends JFrame {
 
 
         // botoes para escolher o tipo de senha
+
+        JToggleButton uppercaseButton = new JToggleButton("Caixa alta");
+        uppercaseButton.setBounds(25, 302, 225,56);
+        add(uppercaseButton);
+
+        //lowcase letter Button
+
+        JToggleButton lowcaseButton = new JToggleButton("Letras miudas");
+        lowcaseButton.setBounds(282, 302, 225, 56);
+        add(lowcaseButton);
+
+        // botao para escolher numeros
+        JToggleButton numbersButton = new JToggleButton("Numeros");
+        numbersButton. setBounds(25, 373, 225, 56);
+        add(numbersButton);
+
+        // botao para escolher caracteres especiais
+
+        JToggleButton symbolsButton = new JToggleButton("Simbolos");
+        numbersButton. setBounds(282, 373, 225, 56);
+        add(symbolsButton);
     }
 
 
