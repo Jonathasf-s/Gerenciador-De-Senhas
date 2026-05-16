@@ -85,19 +85,19 @@ public class Tela extends JFrame {
 
         //lowcase letter Button
 
-        JToggleButton lowcaseButton = new JToggleButton("Letras miudas");
+        JToggleButton lowcaseButton = new JToggleButton("Letras minusculas");
         lowcaseButton.setBounds(282, 302, 225, 56);
         add(lowcaseButton);
 
         // botao para escolher numeros
         JToggleButton numbersButton = new JToggleButton("Numeros");
-        numbersButton. setBounds(25, 373, 225, 56);
+        numbersButton.setBounds(25, 373, 225, 56);
         add(numbersButton);
 
         // botao para escolher caracteres especiais
 
         JToggleButton symbolsButton = new JToggleButton("Simbolos");
-        numbersButton. setBounds(282, 373, 225, 56);
+        symbolsButton.setBounds(282, 373, 225, 56);
         add(symbolsButton);
     }
 
