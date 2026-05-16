@@ -1,8 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Tela extends JFrame {
 
+        private Logica logica;
     public Tela(){
 
 
@@ -24,6 +27,9 @@ public class Tela extends JFrame {
 
         // faz com q a janela abra no centro da tela
         setLocationRelativeTo(null);
+
+        // iniciando o gerador
+        logica = new Logica();
 
 
         // Renderiza os componentes da tela
@@ -95,12 +101,12 @@ public class Tela extends JFrame {
         //lowcase letter Button
 
         JToggleButton lowcaseButton = new JToggleButton("Letras minusculas");
-        lowcaseButton.setBounds(282, 302, 225, 56);
+        lowcaseButton.setBounds(25, 373, 225, 56);
         add(lowcaseButton);
 
         // botao para escolher numeros
         JToggleButton numbersButton = new JToggleButton("Numeros");
-        numbersButton.setBounds(25, 373, 225, 56);
+        numbersButton.setBounds(282, 302, 225, 56);
         add(numbersButton);
 
         // botao para escolher caracteres especiais
@@ -108,6 +114,35 @@ public class Tela extends JFrame {
         JToggleButton symbolsButton = new JToggleButton("Simbolos");
         symbolsButton.setBounds(282, 373, 225, 56);
         add(symbolsButton);
+
+        // Criando o botao para Startar
+
+        JButton generateButton = new JButton("Gerar");
+        generateButton.setFont(new Font("Dialog",Font.PLAIN,32));
+        generateButton.setBounds(155,477,222,41);
+        generateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // validaçao: geraçao de senha apenas quando o tamanho *length* > 0 e um dos botoes for apertado
+                if (passwordLengthImputArea.getText().length()<= 0 ) return;
+                boolean anyToggleSelected = lowcaseButton.isSelected() || uppercaseButton.isSelected() || numbersButton.isSelected() || symbolsButton.isSelected();
+
+                // gerador de senha
+                int passwordLength = Integer.parseInt(passwordLengthImputArea.getText());
+                if(anyToggleSelected){
+
+                    String inciacaoDesenha = logica.geracaoSenha(passwordLength,uppercaseButton.isSelected(),
+                            lowcaseButton.isSelected(),
+                            numbersButton.isSelected(),
+                            symbolsButton.isSelected());
+
+                    // display da senha
+                    senhaInput.setText(inciacaoDesenha);
+
+                }
+            }
+        });
+        add(generateButton);
     }
 
 
