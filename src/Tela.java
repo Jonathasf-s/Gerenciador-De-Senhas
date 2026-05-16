@@ -70,7 +70,16 @@ public class Tela extends JFrame {
         senhaImputPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         add(senhaImputPane);
 
-        // criando a escolha do tamanho da senha
+        // craindo o tamanho da seenha
+        JTextArea passwordLengthImputArea = new JTextArea();
+        passwordLengthImputArea.setFont(new Font("Dialog",Font.PLAIN, 32));
+        passwordLengthImputArea.setBorder(BorderFactory.createLineBorder(Color.black));
+        passwordLengthImputArea.setBounds(310,215,192,39);
+        add(passwordLengthImputArea);
+
+
+
+        // criando o Label da senha
         JLabel tamanhoDaSenha = new JLabel("Tamanho da Senha");
         tamanhoDaSenha.setFont(new Font("Roboto",Font.BOLD,20));
         tamanhoDaSenha.setBounds(25,215,272,39);
