@@ -28,8 +28,8 @@ public class Tela extends JFrame {
         // faz com q a janela abra no centro da tela
         setLocationRelativeTo(null);
 
-        // iniciando o gerador
-        logica = new Logica();
+        // ingecao de Dependencia
+        Logica logica = new Logica();
 
 
         // Renderiza os componentes da tela
@@ -142,6 +142,7 @@ public class Tela extends JFrame {
                 }
             }
         });
+        //tudo pronto
         add(generateButton);
     }
 
