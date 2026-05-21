@@ -29,7 +29,7 @@ public class Tela extends JFrame {
         setLocationRelativeTo(null);
 
         // ingecao de Dependencia
-        Logica logica = new Logica();
+        this.logica = new Logica();
 
 
         // Renderiza os componentes da tela
